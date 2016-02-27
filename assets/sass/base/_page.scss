@@ -1,7 +1,6 @@
 @import '../libs/vars';
 @import '../libs/functions';
 @import '../libs/mixins';
-@import '../libs/filters';
 
 ///
 /// Identity by HTML5 UP
@@ -45,6 +44,7 @@
 		background-size:		70%,				cover;
 		background-position:	center right,		center right,		bottom right;
 		background-attachment:	fixed,			fixed,				fixed;
+		@include filter(blur, 2px);
 
 		&:after {
 			content: '';
@@ -64,7 +64,7 @@
 			background-repeat:		no-repeat,			no-repeat;
 			background-size:		70%, 			cover;
 			background-position:	center right,		center center;
-			@include filter(grayscale, 100%);
+			@include filter(blur, 5px);
 
 			@include vendor('transition', 'opacity #{_duration(bg)} ease-out');
 		}
