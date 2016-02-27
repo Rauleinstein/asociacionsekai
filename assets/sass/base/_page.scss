@@ -1,6 +1,7 @@
 @import '../libs/vars';
 @import '../libs/functions';
 @import '../libs/mixins';
+@import '../libs/filters';
 
 ///
 /// Identity by HTML5 UP
@@ -38,13 +39,11 @@
 		height: 100%;
 		background-color: _palette(bg);
 		@include vendor('background-image', (
-			'url("images/overlay.png")',
-			'linear-gradient(60deg, #{transparentize(_palette(accent1), 0.5)} 5%, #{transparentize(_palette(accent2), 0.65)})',
 			'url("../../images/bg.jpg")'
 		));
-		background-repeat:		repeat,			no-repeat,			no-repeat;
-		background-size:		100px 100px,	cover,				cover;
-		background-position:	top left,		center center,		bottom center;
+		background-repeat:		no-repeat,			no-repeat,			no-repeat;
+		background-size:		70%,				cover;
+		background-position:	center right,		center right,		bottom right;
 		background-attachment:	fixed,			fixed,				fixed;
 
 		&:after {
@@ -60,12 +59,12 @@
 
 			background-color: _palette(bg);
 			@include vendor('background-image', (
-				'url("images/overlay.png")',
-				'linear-gradient(60deg, #{transparentize(_palette(accent1), 0.5)} 5%, #{transparentize(_palette(accent2), 0.65)})'
+				'url("../../images/bg.jpg")'
 			));
-			background-repeat:		repeat,			no-repeat;
-			background-size:		100px 100px,	cover;
-			background-position:	top left,		center center;
+			background-repeat:		no-repeat,			no-repeat;
+			background-size:		70%, 			cover;
+			background-position:	center right,		center center;
+			@include filter(grayscale, 100%);
 
 			@include vendor('transition', 'opacity #{_duration(bg)} ease-out');
 		}
